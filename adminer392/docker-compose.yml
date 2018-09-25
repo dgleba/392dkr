@@ -1,0 +1,26 @@
+version: '3.6'
+
+services:
+
+  adminer:
+    image: adminer:4.6
+    restart: always
+    ports:
+      - "6103:8080"
+    networks:
+      - one      
+
+      
+networks:
+
+  one:
+    name: one
+      external:true
+      
+  # net2:
+    # external:
+      # name: netw2  
+      
+  # network3:
+    # external: true
+    # name: mynet3
