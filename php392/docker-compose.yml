@@ -19,7 +19,7 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - one
+      - sister
  
  
   # db:
@@ -40,12 +40,12 @@ services:
     # volumes:
       # - ../data/mysql387php/:/var/lib/mysql/
     # networks:
-      # - one
+      # - sister
 
       
 networks:
-  one:
-    name: one
+  sister:
+    name: sister
       external:true
 
 

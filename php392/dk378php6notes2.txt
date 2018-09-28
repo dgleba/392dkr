@@ -333,9 +333,9 @@ this works in pmdsdata4 docker with port 6022 mysql.
     host=10.4.1.227:6022
     name="hrdb"
     name="test"
-    user="hruser"
+    user="hru"
     user=root
-    password="hru4234"
+    password="xx"
     password=root
     driver=mysqli
 

@@ -8,13 +8,13 @@ services:
     ports:
       - "6103:8080"
     networks:
-      - one      
+      - sister      
 
       
 networks:
 
-  one:
-    name: one
+  sister:
+    name: sister
       external:true
       
   # net2:

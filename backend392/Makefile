@@ -30,7 +30,7 @@ myd:
 	docker-compose  -f mysql/docker-compose.yml run
   
 mysh:
-	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash
+	docker-compose  -f docker-compose.yml exec dbm /bin/bash
 
 
 myimpa:
@@ -68,19 +68,16 @@ djbash:
 	docker-compose run djangodev /bin/bash
 
 dps:   
-	docker ps 
-	docker ps -a
 	docker images
+  docker network ls
 	docker volume ls 
+	docker ps -a
+	docker ps 
 
   
 # clean docker containers 
 #
 clean:   
-	docker ps 
-	docker ps -a
-	docker images
-	docker volume ls 
 	# remove this one.. 
 	-docker rmi dkr382django2t_djangodev 
 	-docker rmi dkr382r-django_djangodev
@@ -90,6 +87,11 @@ clean:
 	-docker rmi $$(docker images | grep "^<none>" | awk '{ print $3 }') 
   #volumes
 	-docker volume rm $(docker volume ls -qf dangling=true)
+	docker images
+  docker network ls
+	docker volume ls 
+	docker ps -a
+	docker ps 
 
 
 #

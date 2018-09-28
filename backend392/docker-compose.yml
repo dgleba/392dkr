@@ -21,15 +21,15 @@ services:
       - .:/root                                   # folder for scripts, etc.
       - ../data/data392/:/home                 # folder for exported data, etc.
     networks:
-      - one
+      - sister
       
 
 
 # https://docs.docker.com/compose/compose-file/#external-1   
 networks:
   
-  one:
-    name: one
+  sister:
+    name: sister
       external:true
       #I tried lining up external under name and got:
       # albe@pmdsdata4:/srv/dkr/392dkr/backend392$ make myrup
