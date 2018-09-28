@@ -13,7 +13,7 @@ services:
       # MYSQL_ROOT_PASSWORD: root
       # MYSQL_DATABASE: test
     ports:
-      - "6101:3306"
+      - "6112:3306"
     volumes:
       # - /var/aa/mysql/:/var/lib/mysql/
       # - /var/www/mysql385/:/var/lib/mysql/
