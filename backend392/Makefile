@@ -69,7 +69,7 @@ djbash:
 
 dps:   
 	docker images
-  docker network ls
+	docker network ls
 	docker volume ls 
 	docker ps -a
 	docker ps 
@@ -88,7 +88,7 @@ clean:
   #volumes
 	-docker volume rm $(docker volume ls -qf dangling=true)
 	docker images
-  docker network ls
+	docker network ls
 	docker volume ls 
 	docker ps -a
 	docker ps 

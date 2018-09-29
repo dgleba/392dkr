@@ -28,3 +28,22 @@ ll
 uname
 uname -a
 exit
+ll
+mysh:
+docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash
+alias lsl='ls -la'
+ll
+ll
+ls
+exec bash
+ll
+export
+set
+echo 'alias hi="echo hello"' >> ~/.bashrc
+exec bash
+hi
+set
+set
+set
+set|grep hi
+exit
