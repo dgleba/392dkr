@@ -49,6 +49,24 @@ Each docker-compose has an external network defined - it is called `one` - so th
 
 
 
+## Makes a system
+
+```
+cd /srv/dkr/
+git clone https://github.com/dgleba/386dkrmetabase.git
+cd 386dkrmetabase
+dkupd
+```
+
+Similar to the above, use..
+
+	- https://github.com/dgleba/brail347a22
+	- https://github.com/dgleba/394dkrsuperset
+	- https://github.com/dgleba/dkr388django
+	- https://github.com/dgleba/jhink-elk
+
+	
+
 ## This is
 
 This: https://github.com/dgleba/392dkr  

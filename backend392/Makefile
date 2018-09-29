@@ -45,7 +45,15 @@ mydumpb:
     --complete-insert --quote-names  --allow-keywords  \
     --skip-add-drop-table --add-drop-database  --skip-lock-tables  --no-tablespaces --no-create-info --routines  \
     --events  > /home/db_mysqldump.sql '
+
+mycrd:
+	docker-compose exec dbm /bin/bash /root/dbcr.sh
+
+mycrd9:
+	docker-compose exec dbm sh -c 'exec mysql  -uroot -p"$$MYSQL_ROOT_PASSWORD"  -e "create database \
+			if not exists metabasedb"'
  
+	
  
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
