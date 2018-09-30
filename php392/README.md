@@ -1,5 +1,15 @@
 # Dkr378php
 
+
+
+
+
+# This is older and it needs to be updated.
+
+
+
+
+
 This repo creates a generic LAMP stack using docker.
 
 It serves up anything in `/var/www/html` on the server.
@@ -38,7 +48,7 @@ http://10.4.11.186:6021/test2/strap179/
 
 ## Mysql
 
-Mysql is at:  `10.4.11.186:6022`
+Mysql is at:  `10.4.11.186:6022` (check docker-compose.yml to see if has been updated)
 
 user: `root` password: `root`
 

@@ -13,9 +13,8 @@ mysql backend database with php adminer django rails
 
 ## start it up ( See makefile for details )
 
-use these alias from 
+Also use these alias from  https://github.com/dgleba/vamp206a/blob/master/a3/32init.sh#L225
 	
-	https://github.com/dgleba/vamp206a/blob/master/a3/32init.sh#L225
 	```
 	echo "alias dkup='docker-compose up'" >>   ~/.bash_aliases
 	echo "alias dkd='docker-compose down'" >>   ~/.bash_aliases

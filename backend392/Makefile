@@ -3,6 +3,42 @@
 # run scripts from project folder like this --  sc/cl
 
 
+  
+mysh:
+	docker-compose  -f docker-compose.yml exec dbm /bin/bash
+
+mydump:
+	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/all-individual-mysqldump.sh
+ 
+mycrd:
+	docker-compose exec dbm /bin/bash /root/dbcr.sh
+
+myimpa:
+	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/sh21.sh
+
+	
+	
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+#  other/`less common` stuff...
+
+
+
+mydumpb:
+	docker-compose  -f mysql/docker-compose.yml exec dbm sh -c 'exec mysqldump  --force --opt --user=root -p"$$MYSQL_ROOT_PASSWORD" --databases dkrdbm dgnote130  \
+    --complete-insert --quote-names  --allow-keywords  \
+    --skip-add-drop-table --add-drop-database  --skip-lock-tables  --no-tablespaces --no-create-info --routines  \
+    --events  > /home/db_mysqldump.sql '
+
+
+mycrd9:
+	docker-compose exec dbm sh -c 'exec mysql  -uroot -p"$$MYSQL_ROOT_PASSWORD"  -e "create database \
+			if not exists metabasedb"'
+
+			
 myrup:  
 # db recreate build force
 	docker-compose  up --build  --force-recreate  
@@ -28,38 +64,6 @@ adup:
 myd:  
 # dump
 	docker-compose  -f mysql/docker-compose.yml run
-  
-mysh:
-	docker-compose  -f docker-compose.yml exec dbm /bin/bash
-
-
-myimpa:
-	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/sh21.sh
-
-mydumpa:
-	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/all-individual-mysqldump.sh
- 
-
-mydumpb:
-	docker-compose  -f mysql/docker-compose.yml exec dbm sh -c 'exec mysqldump  --force --opt --user=root -p"$$MYSQL_ROOT_PASSWORD" --databases dkrdbm dgnote130  \
-    --complete-insert --quote-names  --allow-keywords  \
-    --skip-add-drop-table --add-drop-database  --skip-lock-tables  --no-tablespaces --no-create-info --routines  \
-    --events  > /home/db_mysqldump.sql '
-
-mycrd:
-	docker-compose exec dbm /bin/bash /root/dbcr.sh
-
-mycrd9:
-	docker-compose exec dbm sh -c 'exec mysql  -uroot -p"$$MYSQL_ROOT_PASSWORD"  -e "create database \
-			if not exists metabasedb"'
- 
-	
- 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-#  other/`less common` stuff...
 
  
 
