@@ -20,12 +20,12 @@ echo 'msg-2018-09-28a'
 
 
 cat <<EOF > /root/tmp.sql
--- -------------------------------------------
 create database if not exists metabasedb;
-GRANT ALL PRIVILEGES ON metabasedb.* TO dev@localhost ;
-GRANT ALL PRIVILEGES ON metabasedb.* TO dev@'%' ;
+-- GRANT ALL PRIVILEGES ON metabasedb.* TO dev@localhost;
+GRANT ALL PRIVILEGES ON metabasedb.* TO 'dev'@'%';
 --
 EOF
+
 
 sleep 1
 
