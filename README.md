@@ -3,6 +3,16 @@
 This repo creates a minimal docker system of mysql backend on external network, demonstrate function using php .
 
 
+
+
+# Note 
+
+These instructions are a work in progress.
+
+There are readme.md, instructions.md, and notes.md in this series of repos and subfolders.
+
+
+
 ## Installation:
 
 To run it:  
@@ -50,6 +60,9 @@ Each docker-compose has an external network defined - it is called `one` - so th
 
 
 ## Makes a system
+
+For example add this..
+
 
 ```
 cd /srv/dkr/
