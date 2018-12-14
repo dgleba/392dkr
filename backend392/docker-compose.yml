@@ -1,12 +1,12 @@
+# https://hub.docker.com/_/mysql
 version: '3.6'
-
 services:
 
-  dbm:
-    image: mysql:5.7.22
+  mydbm:
+    image: mysql:8
+    container_name: mysqldbm
     # build: .
     restart: always
-    # container_name: mysqlm
     env_file:
       - .env
     # environment:
@@ -15,15 +15,11 @@ services:
     ports:
       - "6112:3306"
     volumes:
-      # - /var/aa/mysql/:/var/lib/mysql/
-      # - /var/www/mysql385/:/var/lib/mysql/
-      - ../../data/mysql392dbm/:/var/lib/mysql/   # folder for mysql's internal data files.
+      - ../datasys/mysql392dbm/:/var/lib/mysql/   # folder for mysql's internal data files.
       - .:/root                                   # folder for scripts, etc.
-      - ../../data/data392/:/home                 # folder for exported data, etc.
+      - ../data/data392dbm/:/home                   # folder for exported data, etc.
     networks:
-      - sister
-      
-
+      - sister 
 
 # https://docs.docker.com/compose/compose-file/#external-1   
 networks:
