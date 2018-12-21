@@ -1,0 +1,69 @@
+version: '3.6'
+services: 
+
+  mongo392:
+    image: mongo:3.6
+    restart: always
+    ports:
+      - 27019:27017
+    env_file:
+      - .env
+    volumes:
+      - ../datasys/mongo392/:/data/db   # folder for db's internal data files.
+    networks:
+      - sister 
+
+  noclient:
+    image: mongoclient/mongoclient
+    ports:
+      - 8094:3000
+    env_file:
+      - .env 
+    networks:
+      - sister 
+
+
+  # rockmongo:
+  #   image: weshigbee/rockmongo
+  #   ports:
+  #     - 8093:8080
+  #   env_file:
+  #     - .env 
+  #   networks:
+  #     - sister 
+
+
+  # mongo-express:
+  #   image: mongo-express
+  #   restart: always
+  #   ports:
+  #     - 8091:8081
+  #   networks:
+  #     - sister 
+  #   env_file:
+  #     - .env
+
+  # admr-mongo392:
+  #     image: 'dockette/adminer:full-php5'
+  #     # image: 'dockette/adminer:full'
+  #     # image: 'dockette/adminer:dg'
+  #     restart: always
+  #     ports:
+  #       - '8090:80'
+  #     networks:
+  #       - sister                 
+
+  # admin-mongo:
+  #   image: mrvautin/adminmongo
+  #   ports:
+  #     - "8092:1234"
+  #   env_file:
+  #     - .env      
+  #   networks:
+  #     - sister 
+
+networks:
+  sister:
+    name: sister
+      external:true
+     
