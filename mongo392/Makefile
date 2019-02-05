@@ -2,6 +2,33 @@
 # One liners and simple stuff may be here in this makefile. See sc folder for scripts.
 # run scripts from project folder like this --  sc/cl
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+#  other/`less common` stuff...
+
+
 upgrw:
 	docker-compose  -f docker-compose-garronrw.yml up --build  --force-recreate 
   
@@ -15,7 +42,7 @@ shprox:
 sh:
 	docker-compose  -f docker-compose.yml exec listo429c /bin/sh
 
- mydump:
+mydump:
 	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/all-individual-mysqldump.sh
  
 mycrd:
@@ -23,16 +50,6 @@ mycrd:
 
 myimpa:
 	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/sh21.sh
-
-	
-	
- 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-#  other/`less common` stuff...
-
 
 
 mydumpb:
