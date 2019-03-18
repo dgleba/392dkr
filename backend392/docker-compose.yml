@@ -20,7 +20,14 @@ services:
       - ../data/data392dbm/:/home                   # folder for exported data, etc.
     networks:
       - sister 
+    # https://medium.freecodecamp.org/how-to-setup-log-rotation-for-a-docker-container-a508093912b2
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "50"
 
+        
 # https://docs.docker.com/compose/compose-file/#external-1   
 networks:
   
