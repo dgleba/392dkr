@@ -1,6 +1,10 @@
 data/
 datasys/
 
+data_x/
+datasys_x/
+
+
 #vendor/
 #node_modules/
 npm-debug.log
