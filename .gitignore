@@ -3,7 +3,7 @@ datasys/
 
 data_x/
 datasys_x/
-
+.env
 
 #vendor/
 #node_modules/
