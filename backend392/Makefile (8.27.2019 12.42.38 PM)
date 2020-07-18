@@ -8,34 +8,8 @@ mysh:
 	docker-compose  -f docker-compose.yml exec dbm /bin/bash
 
 mydump:
-	docker-compose  exec dbm /bin/bash /root/all-individual-mysqldump.sh
-
-
-# got error changing database user in metabase.. java.sql.SQLException: null, message from server: "Host 'pmdsdata8.stackpole.ca' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'"
-myflu:
-	docker-compose  -f docker-compose.yml exec dbm sh -c 'mysqladmin -u$$MYSQL_ROOT_USER -p$$MYSQL_ROOT_PASSWORD flush-hosts;'
-
-mysqlperm:
-	docker-compose  -f docker-compose.yml exec dbm sh -c 'chown -R mysql: /var/lib/mysql'
-
-
-
-
-dump2:
-	docker-compose   exec  dbm sh -c  'export db="metabasedb"; \
-	mysqldump --user="$$MYSQL_USER" -p"$$MYSQL_PASSWORD" --databases "$${db}" --add-drop-database --routines --events --flush-privileges --allow-keywords  \
-		| grep -v "SQL SECURITY DEFINER" > /home/"$${db}"_mysqldump_typ1.sql '
-
+	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/all-individual-mysqldump.sh
  
-
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-#  other and `less common` stuff...
-
-
 mycrd:
 	docker-compose exec dbm /bin/bash /root/dbcr.sh
 
@@ -43,6 +17,15 @@ myimpa:
 	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/sh21.sh
 
 	
+	
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+#  other/`less common` stuff...
+
+
 
 mydumpb:
 	docker-compose  -f mysql/docker-compose.yml exec dbm sh -c 'exec mysqldump  --force --opt --user=root -p"$$MYSQL_ROOT_PASSWORD" --databases dkrdbm dgnote130  \
